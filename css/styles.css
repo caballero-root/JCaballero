@@ -10885,99 +10885,232 @@ hr.divider-light {
   background-color: #fff;
 }
 
+/* Navbar base */
 #mainNav {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  background-color: #0A0A0A; /* fondo oscuro constante */
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
+
+/* Brand */
 #mainNav .navbar-brand {
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-weight: 700;
-  color: #212529;
+  font-size: 1.5rem;
+  color: #F5F5F5; /* texto blanco grisáceo */
+  transition: color 0.3s ease;
 }
+
+/* Links */
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: #6c757d;
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.75rem 0;
+  color: #F5F5F5;
+  font-weight: 600;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
 }
-#mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #f4623a;
-}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active,
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f4623a !important;
+  color: #f4623a; /* acento naranja */
 }
+
+/* Toggle button */
+#modeToggle {
+  background-color: #f4623a;
+  color: #0A0A0A;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive desktop (>=992px) */
 @media (min-width: 992px) {
   #mainNav {
-    box-shadow: none;
-    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   }
-  #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  #mainNav .navbar-brand:hover {
-    color: #fff;
-  }
+  #mainNav .navbar-brand,
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
-    padding: 0 1rem;
+    color: #F5F5F5;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
-  }
-  #mainNav .navbar-nav .nav-item:last-child .nav-link {
-    padding-right: 0;
-  }
-  #mainNav.navbar-shrink {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: #fff;
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    color: #212529;
-  }
-  #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #f4623a;
-  }
-  #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
-    color: #212529;
-  }
-  #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
     color: #f4623a;
   }
 }
 
+/*======================
+  Modo Oscuro
+=======================*/
+body.dark-mode {
+  background-color: #0A0A0A; /* fondo negro carbón */
+  color: #F5F5F5;           /* texto principal */
+}
+
+/* Links */
+body.dark-mode a {
+  color: #1E90FF;
+  text-decoration: none;
+}
+body.dark-mode a:hover {
+  color: #f4623a;
+}
+
+/* Botones */
+body.dark-mode .btn-primary {
+  background-color: #f4623a;
+  color: #0A0A0A;
+  border: none;
+}
+body.dark-mode .btn-primary:hover {
+  background-color: #00FF88; /* verde neón de acento */
+  color: #0A0A0A;
+}
+
+/* Secciones */
+body.dark-mode section,
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #0A0A0A;
+  color: #F5F5F5;
+}
+
+/* Cards / Portafolio */
+body.dark-mode .portfolio-box-caption {
+  background-color: rgba(10, 10, 10, 0.8);
+  color: #F5F5F5;
+}
+
+/* Modo claro */
+body.light-mode #mainNav {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.light-mode #mainNav .navbar-brand,
+body.light-mode #mainNav .navbar-nav .nav-item .nav-link {
+  color: #212529;
+}
+
+body.light-mode #mainNav .navbar-nav .nav-item .nav-link:hover,
+body.light-mode #mainNav .navbar-nav .nav-item .nav-link.active {
+  color: #f4623a;
+}
+
+body.light-mode #modeToggle {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+/* Contenedor del switch */
+.mode-switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+/* Ocultar checkbox original */
+.mode-switch input {
+  display: none;
+}
+
+/* Fondo del switch */
+.switch-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #212529; /* oscuro por defecto */
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+/* Bolita del switch */
+.switch-ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  transition: 0.3s all ease;
+}
+
+/* Cuando está activo */
+.mode-switch input:checked + .switch-label {
+  background-color: #f4623a; /* acento naranja */
+}
+
+.mode-switch input:checked + .switch-label .switch-ball {
+  transform: translateX(25px);
+}
+
 header.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
+  height: 100vh; /* ocupa toda la altura de la pantalla */
+  min-height: 40rem;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* Fondo con gradiente + imagen */
+  background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,0.6)), url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
   background-size: cover;
+  background-attachment: scroll;
+  transition: background 0.5s ease;
+  color: #F5F5F5;
 }
+
+/* Títulos */
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
+header.masthead p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+/* Botón principal */
+header.masthead .btn-primary {
+  background-color: #f4623a; /* naranja acento */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+header.masthead .btn-primary:hover {
+  background-color: #f4623a; /* verde neón */
+  color: #0A0A0A;
+}
+
+/* Responsive */
 @media (min-width: 992px) {
-  header.masthead {
-    height: 100vh;
-    min-height: 40rem;
-    padding-top: 4.5rem;
-    padding-bottom: 0;
-  }
-  header.masthead p {
-    font-size: 1.15rem;
-  }
   header.masthead h1, header.masthead .h1 {
     font-size: 3rem;
   }
+  header.masthead p {
+    font-size: 1.25rem;
+  }
 }
+
 @media (min-width: 1200px) {
   header.masthead h1, header.masthead .h1 {
     font-size: 3.5rem;
   }
 }
+
 
 /* Estilos CSS personalizados */
 #habilidades .list-unstyled li {

@@ -56,4 +56,32 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#portfolio a.portfolio-box'
     });
 
+    //seccion de modo oscuro/claro
+const modeToggle = document.getElementById('modeToggle');
+const body = document.body;
+
+// Detecta preferencia previa
+if (localStorage.getItem('mode') === 'light') {
+  body.classList.add('light-mode');
+  body.classList.remove('dark-mode');
+  modeToggle.checked = true;
+} else {
+  body.classList.add('dark-mode');
+  body.classList.remove('light-mode');
+  modeToggle.checked = false;
+}
+
+// Evento toggle
+modeToggle.addEventListener('change', () => {
+  body.classList.toggle('light-mode');
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('light-mode')) {
+    localStorage.setItem('mode', 'light');
+  } else {
+    localStorage.setItem('mode', 'dark');
+  }
+});
+
+
 });
