@@ -10996,7 +10996,7 @@ body.light-mode #mainNav .navbar-nav .nav-item .nav-link {
 
 body.light-mode #mainNav .navbar-nav .nav-item .nav-link:hover,
 body.light-mode #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f4623a;
+  color: #212529;
 }
 
 body.light-mode #modeToggle {
@@ -11110,6 +11110,25 @@ header.masthead .btn-primary:hover {
     font-size: 3.5rem;
   }
 }
+
+/* Modo oscuro (por defecto) */
+body.dark-mode header.masthead {
+  background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.6)),
+              url('../assets/img/bgdark.png');
+  background-position: center;
+  background-size: cover;
+  color: #F5F5F5 !important;
+}
+
+/* Modo claro */
+body.light-mode header.masthead {
+  background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.6)),
+              url('../assets/img/bglight.png');
+  background-position: center;
+  background-size: cover;
+  color: #212529 !important;
+}
+
 
 
 /* Estilos CSS personalizados */
