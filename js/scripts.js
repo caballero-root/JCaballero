@@ -57,29 +57,34 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     //seccion de modo oscuro/claro
+// Selección de elementos
 const modeToggle = document.getElementById('modeToggle');
 const body = document.body;
 
-// Detecta preferencia previa
-if (localStorage.getItem('mode') === 'light') {
-  body.classList.add('light-mode');
-  body.classList.remove('dark-mode');
-  modeToggle.checked = true;
-} else {
+// 1. Detectar preferencia guardada
+let savedMode = localStorage.getItem('mode');
+
+if (savedMode === 'dark') {
+  // Si el usuario eligió oscuro antes
   body.classList.add('dark-mode');
   body.classList.remove('light-mode');
   modeToggle.checked = false;
+} else {
+  // Si no hay preferencia → cargar SIEMPRE en modo claro
+  body.classList.add('light-mode');
+  body.classList.remove('dark-mode');
+  modeToggle.checked = true;
 }
 
-// Evento toggle
+// 2. Evento toggle para cambiar entre modos
 modeToggle.addEventListener('change', () => {
   body.classList.toggle('light-mode');
   body.classList.toggle('dark-mode');
 
-  if (body.classList.contains('light-mode')) {
-    localStorage.setItem('mode', 'light');
-  } else {
+  if (body.classList.contains('dark-mode')) {
     localStorage.setItem('mode', 'dark');
+  } else {
+    localStorage.setItem('mode', 'light');
   }
 });
 

@@ -10996,7 +10996,7 @@ body.light-mode #mainNav .navbar-nav .nav-item .nav-link {
 
 body.light-mode #mainNav .navbar-nav .nav-item .nav-link:hover,
 body.light-mode #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #212529;
+  color: #f4623a;
 }
 
 body.light-mode #modeToggle {
@@ -11122,13 +11122,51 @@ body.dark-mode header.masthead {
 
 /* Modo claro */
 body.light-mode header.masthead {
-  background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.6)),
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
               url('../assets/img/bglight.png');
   background-position: center;
   background-size: cover;
   color: #212529 !important;
 }
 
+/* Botones sociales */
+.social-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* GitHub */
+.btn-social.github {
+  background-color: #333;
+  color: #fff;
+}
+.btn-social.github:hover {
+  background-color: #000;
+  transform: translateY(-3px);
+}
+
+/* LinkedIn */
+.btn-social.linkedin {
+  background-color: #0077b5;
+  color: #fff;
+}
+.btn-social.linkedin:hover {
+  background-color: #005582;
+  transform: translateY(-3px);
+}
 
 
 /* Estilos CSS personalizados */
